@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherController.swift
 //  WhenItsColdOutside
 //
 //  Created by Maciej Bałtowski on 08/12/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class WeatherController: UIViewController {
     
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension WeatherController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -47,7 +47,7 @@ extension ViewController: CLLocationManagerDelegate {
     }
 }
 
-extension ViewController: WeatherManagerDelegate {
+extension WeatherController: WeatherManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
