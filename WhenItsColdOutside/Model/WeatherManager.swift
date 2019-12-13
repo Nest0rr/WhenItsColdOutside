@@ -16,7 +16,7 @@ protocol WeatherManagerDelegate {
 
 struct WeatherManager {
     
-    let delegate: WeatherManagerDelegate?
+    var delegate: WeatherManagerDelegate?
     
     let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?APPID={APIKEY}&units=metric"
     
@@ -27,7 +27,6 @@ struct WeatherManager {
     }
     
     func performRequest(with updatedUrl: String) {
-//MARK: - TODO: Create a URL session here (almost complete)
         if let url = URL(string: updatedUrl) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -45,13 +44,20 @@ struct WeatherManager {
         }
     }
     
-//MARK: - TODO: parse JSON func here
-    
-    func parseJSON(from: Data) -> WeatherModel? {
+    func parseJSON(from weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
-        
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp
+            let name = decodedData.name
+            
+            let weather = WeatherModel(temperature: temp, cityName: name, conditionNum: id)
+            return weather
+            
+        } catch {
+            delegate?.didFailWithError(error: error)
+            return nil
         }
     }
 }

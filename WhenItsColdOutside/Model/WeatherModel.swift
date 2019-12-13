@@ -10,28 +10,28 @@ import Foundation
 
 struct WeatherModel {
     
-    var temperature: String
+    var temperature: Double
     var cityName: String
     var conditionNum: Int
     
     var conditionName: String {
         switch conditionNum {
         case 200...232:
-            return "cloud.bolt"
+            return "tstorm2"
         case 300...321:
-            return "cloud.drizzle"
+            return "light_rain"
         case 500...531:
-            return "cloud.rain"
+            return "shower3"
         case 600...622:
-            return "cloud.snow"
+            return "snow4"
         case 701...781:
-            return "cloud.fog"
+            return "overcast"
         case 800:
-            return "sun.max"
+            return "sunny"
         case 801...804:
-            return "cloud.bolt"
+            return "tstorm3"
         default:
-            return "cloud"
+            return "cloudy2"
         }
     }
 }
