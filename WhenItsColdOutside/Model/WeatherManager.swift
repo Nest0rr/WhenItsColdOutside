@@ -18,7 +18,7 @@ struct WeatherManager {
     
     let delegate: WeatherManagerDelegate?
     
-    let weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}&units=metric"
+    let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?APPID={APIKEY}&units=metric"
     
     //Notes: Updating weather URL with lat and lon taken from location system
     func fetchWeatherData(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -48,6 +48,10 @@ struct WeatherManager {
 //MARK: - TODO: parse JSON func here
     
     func parseJSON(from: Data) -> WeatherModel? {
-        return nil
+        let decoder = JSONDecoder()
+        
+        do {
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+        }
     }
 }

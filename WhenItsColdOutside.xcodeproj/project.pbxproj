@@ -16,6 +16,7 @@
 		52974524239D0DD600019A34 /* WhenItsColdOutside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52974522239D0DD600019A34 /* WhenItsColdOutside.xcdatamodeld */; };
 		52974526239D0DDD00019A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52974525239D0DDD00019A34 /* Assets.xcassets */; };
 		52974529239D0DDD00019A34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52974527239D0DDD00019A34 /* LaunchScreen.storyboard */; };
+		52B5DA0523A38B3E00A91621 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5DA0423A38B3E00A91621 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		52974525239D0DDD00019A34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52974528239D0DDD00019A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5297452A239D0DDD00019A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B5DA0423A38B3E00A91621 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				526535A3239D56150016149A /* WeatherManager.swift */,
 				526535A9239D5CA80016149A /* WeatherModel.swift */,
+				52B5DA0423A38B3E00A91621 /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				52974524239D0DD600019A34 /* WhenItsColdOutside.xcdatamodeld in Sources */,
 				5297451E239D0DD600019A34 /* ViewController.swift in Sources */,
+				52B5DA0523A38B3E00A91621 /* WeatherData.swift in Sources */,
 				526535A4239D56150016149A /* WeatherManager.swift in Sources */,
 				5297451A239D0DD600019A34 /* AppDelegate.swift in Sources */,
 				526535AA239D5CA80016149A /* WeatherModel.swift in Sources */,
