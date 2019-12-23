@@ -26,7 +26,7 @@
         <!--WeatherController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="WeatherController" id="BYZ-38-t0r" customClass="ViewController" customModule="WhenItsColdOutside" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="WeatherController" id="BYZ-38-t0r" customClass="WeatherController" customModule="WhenItsColdOutside" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,18 +97,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-io-Mhk" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="312" width="375" height="311"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-cT-oo4">
-                                                <rect key="frame" x="16" y="8" width="342" height="48"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested clothing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkY-2Y-4FA" userLabel="ClothingPicker Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="48"/>
-                                                        <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
-                                                        <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jacket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjD-xX-PZ1">
                                                 <rect key="frame" x="16" y="79" width="342" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,11 +104,15 @@
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Suggested clothing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkY-2Y-4FA" userLabel="ClothingPicker Label">
+                                                <rect key="frame" x="16" y="23" width="342" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Dgr-cT-oo4" firstAttribute="centerY" secondItem="fKb-io-Mhk" secondAttribute="centerY" id="ipV-De-qyW"/>
-                                            <constraint firstItem="Dgr-cT-oo4" firstAttribute="centerX" secondItem="fKb-io-Mhk" secondAttribute="centerX" id="zIb-Eo-3f9"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -147,7 +139,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Info" id="HBl-9u-0Id">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="pcg-Ps-6Z8">
+                        <barButtonItem key="rightBarButtonItem" title="Apparels" id="pcg-Ps-6Z8">
                             <connections>
                                 <segue destination="off-Q1-X3O" kind="show" id="Gr5-ww-b4s"/>
                             </connections>
@@ -166,7 +158,7 @@
         <!--ClothingPickerController-->
         <scene sceneID="Iuj-21-XyB">
             <objects>
-                <viewController title="ClothingPickerController" id="off-Q1-X3O" sceneMemberID="viewController">
+                <viewController title="ClothingPickerController" id="off-Q1-X3O" customClass="ClothingPickerController" customModule="WhenItsColdOutside" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y39-aw-qrU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,22 +173,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Utb-ym-Vq8">
-                                <rect key="frame" x="0.0" y="238" width="375" height="232"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlW-TP-04Q">
-                                <rect key="frame" x="158" y="478" width="58" height="42"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick clothing..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ogm-1i-qQh">
+                                <rect key="frame" x="103" y="251" width="166" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14576198630136986" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="saveClothing:" destination="qTu-vb-f9N" eventType="touchUpInside" id="c3Z-ec-Uh2"/>
+                                    <action selector="clothingPickerTextField:" destination="roI-J5-tq5" eventType="editingDidEnd" id="uqH-vd-qpp"/>
+                                    <action selector="selectedClothingTextField:" destination="roI-J5-tq5" eventType="editingDidEnd" id="NYv-3X-WCb"/>
+                                    <action selector="tappingTextField:" destination="off-Q1-X3O" eventType="touchDown" id="mT5-Ie-uBy"/>
                                 </connections>
-                            </button>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -208,9 +196,12 @@
                         <viewLayoutGuide key="safeArea" id="gyZ-hH-qNf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pick clothing" id="O1C-vi-dda"/>
+                    <connections>
+                        <outlet property="clothingPickerTextField" destination="Ogm-1i-qQh" id="Plj-sS-4mb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYG-se-DU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="qTu-vb-f9N" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="roI-J5-tq5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="704.79999999999995" y="129.98500749625188"/>
         </scene>
