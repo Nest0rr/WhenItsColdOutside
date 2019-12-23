@@ -9,10 +9,9 @@
 import UIKit
 import CoreData
 
-//MARK: - TODO create a list of clothing and hook it up to pickerview.
-//implement CoreData so selected item can be saved
+//MARK: - TODO implement CoreData so selected item can be saved
 
-class ClothingPickerController: UIViewController, UITextFieldDelegate {
+class ClothingPickerController: UIViewController{
     let clothing = ["Tshirt",
                         "Sweater",
                         "Jacket",
@@ -30,8 +29,7 @@ class ClothingPickerController: UIViewController, UITextFieldDelegate {
     func createPickerView() {
         let clothingPicker = UIPickerView()
         clothingPicker.delegate = self
-        
-        clothingPickerTextField.delegate = self
+
         clothingPickerTextField.inputView = clothingPicker
         
     }
