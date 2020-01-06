@@ -14,6 +14,7 @@ class WeatherController: UIViewController {
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var suggClothingLabel: UILabel!
     
     let locationManager = CLLocationManager()
     var weatherManager = WeatherManager(delegate: nil)
@@ -62,4 +63,21 @@ extension WeatherController: WeatherManagerDelegate {
     }
     
     
+}
+
+extension WeatherController: ChangeClothingTypeDelegate {
+    
+    func newClothingType(clothing: String) {
+        DispatchQueue.main.async {
+            self.suggClothingLabel.text = clothing
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeClothing" {
+            let destinationVC = segue.destination as! ClothingPickerController
+            
+            destinationVC.delegate = self
+        }
+    }
 }

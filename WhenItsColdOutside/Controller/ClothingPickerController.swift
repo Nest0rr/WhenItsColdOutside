@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import CoreData
 
-//MARK: - TODO implement CoreData so selected item can be saved
+protocol ChangeClothingTypeDelegate {
+    func newClothingType(clothing: String)
+}
 
 class ClothingPickerController: UIViewController{
     let clothing = ["Tshirt",
@@ -18,13 +19,22 @@ class ClothingPickerController: UIViewController{
                         "Winter Jacket"]
         
     var selectedClothing: String?
+    var apparelArray = [Apparel]()
+    
+    var delegate: ChangeClothingTypeDelegate?
     
     @IBOutlet weak var clothingPickerTextField: UITextField!
-    
     @IBAction func tappingTextField(_ sender: UITextField) {
         createPickerView()
         createToolBar()
     }
+    @IBAction func saveChoice(_ sender: AnyObject) {
+        let choice = clothingPickerTextField.text!          //transferring the selected clothing
+        delegate?.newClothingType(clothing: choice)         //to the master view controller
+        self.dismiss(animated: true, completion: nil)
+    }
+
+//MARK: - Creating PickerView and toolbar
     
     func createPickerView() {
         let clothingPicker = UIPickerView()
@@ -33,7 +43,7 @@ class ClothingPickerController: UIViewController{
         clothingPickerTextField.inputView = clothingPicker
         
     }
-    
+
     func createToolBar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -49,7 +59,12 @@ class ClothingPickerController: UIViewController{
     @objc func dismissKeyboard() {
         clothingPickerTextField.endEditing(true)
     }
+    
 }
+
+
+
+//MARK: - PickerView configuration methods
 
 extension ClothingPickerController: UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -68,5 +83,7 @@ extension ClothingPickerController: UIPickerViewDataSource, UIPickerViewDelegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedClothing = clothing[row]
         clothingPickerTextField.text = selectedClothing
+    
+
     }
 }

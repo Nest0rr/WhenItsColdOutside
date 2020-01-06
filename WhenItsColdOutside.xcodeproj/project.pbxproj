@@ -49,12 +49,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		526535A5239D56D30016149A /* VIew */ = {
+		5213A7A123B9ECCC00C18E61 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				52974522239D0DD600019A34 /* WhenItsColdOutside.xcdatamodeld */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		526535A5239D56D30016149A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				5297451F239D0DD600019A34 /* Main.storyboard */,
 			);
-			path = VIew;
+			path = View;
 			sourceTree = "<group>";
 		};
 		526535A7239D56FC0016149A /* Controller */ = {
@@ -98,12 +106,12 @@
 				52974519239D0DD600019A34 /* AppDelegate.swift */,
 				52B5DA2D23A3A10400A91621 /* SceneDelegate.swift */,
 				526535A8239D570C0016149A /* Model */,
-				526535A5239D56D30016149A /* VIew */,
+				526535A5239D56D30016149A /* View */,
 				526535A7239D56FC0016149A /* Controller */,
+				5213A7A123B9ECCC00C18E61 /* Data Model */,
 				52974525239D0DDD00019A34 /* Assets.xcassets */,
 				52974527239D0DDD00019A34 /* LaunchScreen.storyboard */,
 				5297452A239D0DDD00019A34 /* Info.plist */,
-				52974522239D0DD600019A34 /* WhenItsColdOutside.xcdatamodeld */,
 				52B5DA0623A38E9800A91621 /* WeatherImages.xcassets */,
 			);
 			path = WhenItsColdOutside;
